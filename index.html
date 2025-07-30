@@ -8,32 +8,54 @@
   <!-- Tailwind CSS -->
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 
-  <!-- tsParticles (interactive particles background) -->
+  <!-- tsParticles -->
   <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
 
   <style>
-    html {
-      scroll-padding-top: 80px;
-      scroll-behavior: smooth;
-    }
+  html {
+    scroll-padding-top: 80px;
+    scroll-behavior: smooth;
+  }
 
-    body {
-      background: linear-gradient(to right, #4f46e5, #3b82f6);
-    }
+  body {
+    margin: 0;
+    padding: 0;
+    background: transparent;
+  }
 
-    .hero {
-      background-image: url('https://images.unsplash.com/photo-1614064641938-3bbee52942c5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');
-      background-size: cover;
-      background-position: center;
-    }
-  </style>
+.hero {
+  background-image: url('https://i.imgur.com/Ufa659N.jpeg');
+  background-size: cover;
+  background-position: center;
+  height: 300px; /* Feel free to adjust the height */
+}
+
+  #tsparticles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+
+  .content-container {
+    background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white */
+    backdrop-filter: blur(4px);
+    border-radius: 1rem;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    margin-top: -60px; /* Pull it up a bit over the hero */
+    padding: 2rem;
+  }
+</style>
+
 </head>
-
-
 <body class="relative text-gray-900 font-sans leading-relaxed">
-  <!-- Particle background container -->
-<div id="tsparticles" class="fixed top-0 left-0 w-full h-full -z-10"></div>
 
+  <!-- Particle background -->
+  <div id="tsparticles" class="fixed top-0 left-0 w-full h-full -z-10"></div>
+
+  <!-- Header -->
   <header class="bg-white shadow sticky top-0 z-50">
     <div class="max-w-4xl mx-auto px-6 py-4 flex justify-between items-center">
       <h1 class="text-2xl font-bold text-blue-600">Varun Batra</h1>
@@ -46,6 +68,7 @@
     </div>
   </header>
 
+  <!-- Hero Section -->
   <section class="hero h-64 flex items-center justify-center text-white">
     <div class="text-center">
       <h2 class="text-4xl font-bold">Welcome to My Portfolio</h2>
@@ -54,17 +77,11 @@
     </div>
   </section>
 
-  <main class="max-w-4xl mx-auto p-6 space-y-10 bg-white bg-opacity-80 rounded-lg shadow-lg mt-10">
+  <!-- Main Content -->
+  <main class="max-w-4xl mx-auto p-6 space-y-10 bg-white bg-opacity-90 backdrop-blur-md rounded-lg shadow-lg mt-10 relative z-10">
 
     <section id="about" class="flex items-center">
-     <img 
-  src="https://i.imgur.com/ADkaIWB.jpeg" 
-  alt="Varun Batra" 
-  width="150" 
-  height="150" 
-  class="rounded-full mr-4"
-/>
-
+      <img src="https://i.imgur.com/ADkaIWB.jpeg" alt="Varun Batra" width="150" height="150" class="rounded-full mr-4" />
       <div>
         <h2 class="text-3xl font-semibold mb-2 text-blue-600">About Me</h2>
         <p>
@@ -160,38 +177,40 @@
 
   </main>
 
-  <footer class="bg-white mt-10 p-4 text-center text-sm text-gray-500">
+  <!-- Footer -->
+  <footer class="bg-white mt-10 p-4 text-center text-sm text-gray-500 relative z-10">
     © 2025 Varun Batra
   </footer>
-<script>
-  tsParticles.load("tsparticles", {
-    particles: {
-      number: { value: 60 },
-      color: { value: "#ffffff" },
-      shape: { type: "circle" },
-      opacity: { value: 0.3 },
-      size: { value: 3 },
-      move: { enable: true, speed: 1 }
-    },
-    interactivity: {
-      events: {
-        onhover: { enable: true, mode: "repulse" },
-        onclick: { enable: true, mode: "push" }
+
+  <!-- tsParticles Config -->
+  <script>
+    tsParticles.load("tsparticles", {
+      fullScreen: { enable: false },
+      particles: {
+        number: { value: 60 },
+        color: { value: "#ffffff" },
+        shape: { type: "circle" },
+        opacity: { value: 0.3 },
+        size: { value: 3 },
+        move: { enable: true, speed: 1 }
       },
-      modes: {
-        repulse: { distance: 100 },
-        push: { quantity: 4 }
+      interactivity: {
+        events: {
+          onhover: { enable: true, mode: "repulse" },
+          onclick: { enable: true, mode: "push" }
+        },
+        modes: {
+          repulse: { distance: 100 },
+          push: { quantity: 4 }
+        }
+      },
+      background: {
+        color: "transparent"
       }
-    },
-    background: {
-      color: "#4f46e5"
-    }
-  });
-</script>
+    });
+  </script>
 
 </body>
 </html>
-
-
 </body>
 </html>
